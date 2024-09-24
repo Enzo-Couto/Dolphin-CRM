@@ -14,3 +14,4 @@ SQLAlchemy==2.0.35
 websockets==13.0
 Werkzeug==3.0.4
 wget==3.2
+psycopg2-binary
