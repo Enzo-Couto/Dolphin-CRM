@@ -1,0 +1,108 @@
+* {
+    font-family: 'Gilroy';
+}
+
+.login-sec {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.login-sec .cont-media {
+    width: 100%;
+    height: auto; /* Alterado para auto para permitir expansão */
+    max-width: 300px; /* Limitar a largura máxima */
+    background: rgb(255, 255, 255);
+    background: linear-gradient(164deg, rgba(255, 255, 255, 1) 0%, rgb(255 255 255) 100%);
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+    border: #686868 solid 1px;
+    border-radius: 30px;
+    padding: 20px; /* Adicionando padding para melhor espaçamento */
+}
+
+.login-sec .cont-media .p-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.p-logo .logo {
+    width: 50%;
+}
+
+.alert {
+    margin-bottom: 15px; /* Espaçamento entre a mensagem flash e o formulário */
+}
+
+.form .e-mail-inpt,
+.form .pass-inpt {
+    border: none;
+    position: relative;
+    z-index: 0;
+    width: 100%; /* 100% para melhor responsividade */
+    height: 37px;
+    border: #adadad solid .1mm;
+    border-radius: 3px;
+    background-color: #ffffff;
+    transition: all ease-in-out .3s;
+}
+
+.form .e-mail-inpt::-webkit-input-placeholder,
+.form .pass-inpt::-webkit-input-placeholder {
+    position: absolute;
+    top: 10px;
+    font-weight: 500;
+    font-size: 11px;
+    transition: all ease-in-out .3s;
+}
+
+.form .e-mail-inpt:focus-visible,
+.form .pass-inpt:focus-visible {
+    border-radius: 10px;
+    border-bottom: solid #010101 2px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.212);
+    outline: none;
+}
+
+.l-parent .shpass {
+    margin-left: -80px;
+    font-size: 15px;
+    color: #010101;
+}
+
+.chk-box {
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    color: #010101;
+}
+
+.submit {
+    width: 100%; /* 100% para melhor responsividade */
+    height: 35px;
+    cursor: pointer;
+    border: solid #979797 1px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #ffffff;
+    background-color: #2db1ff;
+    transition: all ease-in-out .2s;
+}
+
+.submit:hover {
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.212);
+}
+
+@media (max-width: 768px) {
+    .login-sec .cont-media {
+        padding: 15px; /* Menos padding em telas menores */
+    }
+}
