@@ -1,61 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/stylesheet.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="shortcut icon" href="{{ url_for('static', filename='img/Dolphin Logo Transparent.png') }}" type="image/x-icon">
     <title>Dolphin CRM | CEBJC</title>
 </head>
+
 <body>
-    <div class="p-of-page"></div>
-    
-    <div class="p-login-sec">
-        <div class="container">
-            <div class="login-sec">
-                <div class="cont-media">
-                    <div class="p-logo">
-                        <img class="logo" src="{{ url_for('static', filename='img/Dolphin CRM Logo.png') }}" alt="SEO">
-                    </div>
-                    <div class="p-form">
 
-                        <!-- Bloco de Mensagens Flash -->
-                        {% with messages = get_flashed_messages() %}
-                            {% if messages %}
-                                <div class="alert alert-danger">
-                                    <ul>
-                                    {% for message in messages %}
-                                        <li>{{ message }}</li>
-                                    {% endfor %}
-                                    </ul>
-                                </div>
-                            {% endif %}
-                        {% endwith %}
-
-                        <form class="form" action="{{ url_for('auth.auth') }}" method="POST">
-                            <input class="e-mail-inpt" type="text" name="email" placeholder="Digite seu E-mail" required>
-                            <br>
-                            <input class="pass-inpt" type="password" name="password" placeholder="Digite sua senha" required>
-                            <br>
-                            <div class="l-parent">
-                                <label class="shpass">Mostrar senha</label>
-                                <input class="chk-box" type="checkbox" id="show-pass">
-                            </div>
-                            <br>
-                            <input class="submit" type="submit" value="Entrar">
-                        </form>
-                    </div>
+    <div class="container" id="container">
+        <div class="form-container sign-up">
+            <form>
+                <img src="{{ url_for('static', filename='img/Dolphin Logo Transparent.png') }}" alt="logo of Dolphin" class="logo-img">
+                <h1>Criar Conta</h1>
+                <h4>Em breve...</h4>
+            </form>
+        </div>
+        <div class="form-container sign-in">
+            <form class="form" action="{{ url_for('auth.auth') }}" method="POST">
+                <img src="{{ url_for('static', filename='img/Dolphin Logo Transparent.png') }}" alt="logo of Dolphin" class="logo-img">
+                <h1>Log-in</h1>
+                <!-- Bloco de Mensagens Flash -->
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        <div class="alert alert-danger">
+                            <ul>
+                            {% for message in messages %}
+                                <li>{{ message }}</li>
+                            {% endfor %}
+                            </ul>
+                        </div>
+                    {% endif %}
+                {% endwith %}
+                <input type="email" name="email" placeholder="Digite seu e-mail" required>
+                <input type="password" name="password" placeholder="Digite sua senha" required>
+                <input class="submit" type="submit" value="Entrar">
+            </form>
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>Já nos conhece?</h1>
+                    <p>Entre e aproveite tudo que o Dolphin CRM pode lhe proporcionar!</p>
+                    <button class="hidden" id="login">Entrar</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>Ainda não nos conhece?</h1>
+                    <p>Cadastre-se e experimente a revolução no gerenciamento de relacionamento ao cliente!</p>
+                    <button class="hidden" id="register">Cadastrar</button>
                 </div>
             </div>
         </div>
     </div>
-
-    <script src="{{ url_for('static', filename='js/jquery-3.2.1.slim.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
+
 </html>
