@@ -1,13 +1,11 @@
-const chk = document.querySelector(".chk-box");
-const pass = document.querySelector(".pass-inpt");
+const container = document.getElementById('container');
+const registerBtn = document.getElementById('register');
+const loginBtn = document.getElementById('login');
 
-chk.addEventListener("click", tglclass);
-function tglclass(){
-    chk.classList.toggle("active");
-    if (pass.type == "password"){
-        pass.type = "text"
-    }
-    else{
-        pass.type = "password"
-    }
-};
+registerBtn.addEventListener('click', () => {
+    container.classList.add("active");
+});
+
+loginBtn.addEventListener('click', () => {
+    container.classList.remove("active");
+});
